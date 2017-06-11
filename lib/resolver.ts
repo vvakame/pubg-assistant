@@ -3,6 +3,8 @@ import * as path from "path";
 
 import * as yaml from "js-yaml";
 
+import { Client, Entity } from "./apiai/";
+
 export interface ObjectGuideData {
     defaultError: string;
     erangel: {
@@ -68,5 +70,24 @@ export class Resolver {
         }
 
         return mapData[areaKey][req.object];
+    }
+
+    loadApiAIEntities() {
+        const dataFilePath = path.resolve(this.basePath, "entities.yml");
+        const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
+        const data = yaml.load(content);
+        return data;
+    }
+
+    async updateApiAIEntities() {
+        const cli = new Client();
+        const entities = this.loadApiAIEntities();
+        const results = await Promise.all(Object.keys(entities).map(async entityName => {
+            const entity: Entity = entities[entityName];
+            entity.name = entityName;
+            return await cli.putEntity(entity);
+        }));
+
+        return results;
     }
 }

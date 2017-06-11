@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "private": true,
   "main": "./lib/index.js",
+  "bin": {
+    "tsfmt": "./bin/pubg-entity-update"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vvakame/pubg-assistant.git"
@@ -21,6 +24,7 @@
   "scripts": {
     "build": "tsfmt -r && tsc",
     "test": "npm run build && mocha --reporter spec --require intelli-espower-loader",
+    "update:apiai": "node bin/pubg-entity-update",
     "deploy:cloudfunctions": "gcloud --project pubg-assistant beta functions deploy pubg-guide-apiai --stage-bucket pubg-assistant-cloudfunctions --entry-point apiai --trigger-http"
   },
   "dependencies": {

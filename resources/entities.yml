@@ -1,0 +1,84 @@
+area:
+  isOverridable: true
+  entries:
+    - value: pochinki
+      synonyms:
+        - Pochinki
+        - ポチンキ
+    - value: georgopol
+      synonyms:
+        - Georgopol
+        - ジョージプール
+        - ジョージポレ
+    - value: school
+      synonyms:
+        - School
+        - 大学
+    - value: mylta
+      synonyms:
+        - Mylta
+        - ミルタ
+    - value: sosnovka_military_base
+      synonyms:
+        - Sosnovka Militaly Base
+        - Militaly Base
+        - Base
+        - 基地
+        - ミリタリーベース
+    - value: severny
+      synonyms:
+        - Severny
+        - セバニー
+    - value: gatka
+      synonyms:
+        - Gatka
+        - ガトカ
+    - value: primorsk
+      synonyms:
+        - Primorsk
+        - プリモルスク
+  isEnum: false
+  automatedExpansion: false
+
+object:
+  isOverridable: true
+  entries:
+    - value: vehicle
+      synonyms:
+        - vehicle
+        - 車
+        - バイク
+        - 足
+        - ダチア
+        - UAZ
+        - バギー
+    - value: weapon
+      synonyms:
+        - weapon
+        - 武器
+        - 銃
+        - ピストル
+        - 拳銃
+        - SG
+        - ショットガン
+        - AR
+        - アサルトライフル
+        - SMG
+        - サブマシンガン
+        - SR
+        - スナイパーライフル
+        - フライパン
+  isEnum: false
+  automatedExpansion: false
+
+tips:
+  isOverridable: true
+  entries:
+    - value: today
+      synonyms:
+        - 今日のTips
+    - value: weapon
+      synonyms:
+        - 武器のTips
+  isEnum: false
+  automatedExpansion: false
