@@ -1,19 +1,40 @@
 {
   "name": "pubg-assistant",
+  "description": "",
   "version": "1.0.0",
   "private": true,
   "main": "./lib/index.js",
-  "repository": "https://github.com/vvakame/pubg-assistant.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvakame/pubg-assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vvakame/pubg-assistant/issues"
+  },
+  "homepage": "https://github.com/vvakame/pubg-assistant#readme",
   "author": "vvakame <vvakame+dev@gmail.com>",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsfmt -r && tsc",
+    "test": "npm run build && mocha --reporter spec --require intelli-espower-loader",
     "deploy:cloudfunctions": "gcloud --project pubg-assistant beta functions deploy pubg-guide-apiai --stage-bucket pubg-assistant-cloudfunctions --entry-point apiai --trigger-http"
   },
   "devDependencies": {
     "@types/express": "^4.0.35",
+    "@types/js-yaml": "^3.5.31",
+    "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.29",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.4.2",
+    "power-assert": "^1.4.4",
     "typescript": "^2.3.4",
     "typescript-formatter": "^5.2.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.8.4"
   }
 }

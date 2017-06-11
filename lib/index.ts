@@ -2,6 +2,7 @@ import * as http from "http";
 import * as express from "express";
 
 import { QueryResponse, WebhookResponse } from "./apiai";
+import { ObjectGuideReq, Resolver } from "./resolver";
 
 export function apiai(req: express.Request, res: express.Response) {
     const data: QueryResponse<any> = req.body;
@@ -28,15 +29,13 @@ export function apiai(req: express.Request, res: express.Response) {
     });
 }
 
-interface ObjectGuide {
-    area: string;
-    object: "vehicle" | "weapon";
-}
+function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse {
+    const resolver = new Resolver({ lang: req.lang });
+    const result = resolver.objectGuide(req.result.parameters);
 
-function handleObjectGuide(req: QueryResponse<ObjectGuide>): WebhookResponse {
     return {
-        speech: `speech: ${req.result.parameters.area}の${req.result.parameters.object}を探せばいいの？`,
-        displayText: `displayText: ${req.result.parameters.area}の${req.result.parameters.object}を探せばいいの？`,
+        speech: `speech: ${result}`,
+        displayText: `${result}`,
         data: req.result.parameters,
         contextOut: [],
         source: "PUBG Cloud Functions",

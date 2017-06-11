@@ -1,0 +1,32 @@
+# http://battlegrounds.gamepedia.com/Erangel
+# https://pubgmap.io/erangel.html
+
+defaultError: データベースに存在しませんね… https://github.com/vvakame/pubg-assistant
+
+erangel:
+  # Major Cities
+  georgopol:
+    vehicle: コンテナエリア東の三叉路に湧く可能性 そこから街道沿い東にガレージ、北側橋渡ったところにもガレージがあります
+    weapon:  コンテナエリアはコンテナ登って上を探索するとよいでしょう
+  yasnaya_polyana:
+  # Minor Cities
+  gatka:
+  lipoyka:
+  mylta:
+    vehicle: 3連ガレージが道路に面した北側街の東にありますよ 街の北東倉庫の裏にも湧く可能性があります
+  novonconove:
+  # Pocninki:
+  pochinki:
+  primorsk:
+  rozhok:
+    vehicle: ガレージが道路の南側右側にありますよ 西側Water Townの北東150mにもありますね
+  severny:
+  zharki:
+  # Major Landmarks
+  mylta_power:
+  sosnovka_island:
+  Sosnovka_military_base:
+  stalber:
+  # Others
+  school:
+    vehicle: ガレージがマンションから北に250mと北東東200mにありますよ

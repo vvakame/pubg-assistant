@@ -2,13 +2,18 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "downlevelIteration": true,
-    "strict": true,
+    "lib": [
+      "es2016"
+    ],
     "types": [
-      "node"
-    ]
+      "node",
+      "mocha"
+    ],
+    "strict": true,
+    "downlevelIteration": true
   },
   "include": [
-    "lib/"
+    "lib/",
+    "test/"
   ]
 }
