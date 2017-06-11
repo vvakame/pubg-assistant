@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "downlevelIteration": true,
+    "strict": true,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "lib/"
+  ]
+}
