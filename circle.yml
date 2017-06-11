@@ -1,6 +1,6 @@
 machine:
   environment:
-    ACCOUNT: deploy-cloudfunctions@pubg-assistant.iam.gserviceaccount.com
+    SERVICE_ACCOUNT: deploy-cloudfunctions@pubg-assistant.iam.gserviceaccount.com
   node:
     version: v8
 
@@ -8,11 +8,9 @@ deployment:
   cf:
     branch: master
     commands:
-      # shared
-      - echo $GCLOUD_KEY | base64 --decode > service_account.json
-      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
-      - gcloud auth activate-service-account $ACCOUNT --key-file ./service_account.json
-      # for Google CloudFunctions
+      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update --version 158.0.0
       - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta
-      - rm -rf ./node_modules/ && npm install
+      - echo $GCLOUD_KEY | base64 --decode > service_account.json
+      - gcloud auth activate-service-account $SERVICE_ACCOUNT --key-file ./service_account.json
+      - npm run update:apiai
       - npm run deploy:cloudfunctions

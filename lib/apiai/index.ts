@@ -35,7 +35,7 @@ export class Client {
 
     constructor(opts: Options = {}) {
         this.baseUrl = opts.baseUrl || baseUrl;
-        this.accessToken = opts.accessToken || process.env["APIAI_ACCESS_TOKEN"];
+        this.accessToken = opts.accessToken || process.env["APIAI_DEVELOPER_ACCESS_TOKEN"];
     }
 
     async getEntities(): Promise<EntityDescription[]> {
