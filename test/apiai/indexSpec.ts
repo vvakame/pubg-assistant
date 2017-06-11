@@ -29,13 +29,33 @@ describe("Client class", () => {
             }));
 
             details.forEach(entity => {
-                console.log(JSON.stringify(entity, null, 2));
                 assert(!!entity.name);
                 entity.entries.forEach(entry => {
                     assert(!!entry.value);
                     assert(entry.synonyms.length !== 0);
                 });
             });
+        });
+    });
+
+    describe("putEntity method", () => {
+        it("can put entity data to api.ai", async () => {
+            const cli = new Client();
+
+            const result = await cli.putEntity({
+                id: undefined as any,
+                name: "unittest",
+                entries: [
+                    {
+                        value: "unit-test",
+                        synonyms: ["unittest", "テスト"],
+                    }
+                ],
+                isEnum: false,
+                automatedExpansion: false,
+            });
+
+            assert(result.status.errorType === "success");
         });
     });
 });

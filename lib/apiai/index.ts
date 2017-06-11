@@ -52,7 +52,8 @@ export class Client {
             },
         });
         if (resp.status !== 200) {
-            throw new Error(`unexpected result: ${resp.status}`);
+            const text = await resp.text();
+            throw new Error(`unexpected result: ${resp.status}, ${text}`);
         }
 
         return await resp.json();
@@ -72,7 +73,31 @@ export class Client {
             },
         });
         if (resp.status !== 200) {
-            throw new Error(`unexpected result: ${resp.status}`);
+            const text = await resp.text();
+            throw new Error(`unexpected result: ${resp.status}, ${text}`);
+        }
+
+        return await resp.json();
+    }
+
+    async putEntity(entity: Entity): Promise<{ id: string; status: Status; }> {
+        const endpointUrl = url.parse(this.baseUrl, true);
+        endpointUrl.pathname = path.join(endpointUrl.pathname || "/v1", `/entities`);
+        endpointUrl.query = {
+            v: apiVersion,
+            ...endpointUrl.query,
+        };
+        const resp = await fetch(url.format(endpointUrl), {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                Authorization: `Bearer ${this.accessToken}`,
+            },
+            body: JSON.stringify(entity),
+        });
+        if (resp.status !== 200) {
+            const text = await resp.text();
+            throw new Error(`unexpected result: ${resp.status}, ${text}`);
         }
 
         return await resp.json();
