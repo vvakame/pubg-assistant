@@ -1,5 +1,7 @@
 service_account.json
+PUBG-Assistant.zip
 
 node_modules/
 
 lib/**/*.js
+test/**/*.js

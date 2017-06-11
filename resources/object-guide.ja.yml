@@ -11,6 +11,7 @@ erangel:
   yasnaya_polyana:
   # Minor Cities
   gatka:
+    vehicle: 街の北西と北東に湧く可能性があります
   lipoyka:
   mylta:
     vehicle: 3連ガレージが道路に面した北側街の東にありますよ 街の北東倉庫の裏にも湧く可能性があります
@@ -25,7 +26,7 @@ erangel:
   # Major Landmarks
   mylta_power:
   sosnovka_island:
-  Sosnovka_military_base:
+  sosnovka_military_base:
   stalber:
   # Others
   school:

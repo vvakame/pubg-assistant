@@ -1,7 +1,7 @@
 import * as http from "http";
 import * as express from "express";
 
-import { QueryResponse, WebhookResponse } from "./apiai";
+import { QueryResponse, WebhookResponse } from "./apiai/apiai";
 import { ObjectGuideReq, Resolver } from "./resolver";
 
 export function apiai(req: express.Request, res: express.Response) {
@@ -30,11 +30,13 @@ export function apiai(req: express.Request, res: express.Response) {
 }
 
 function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse {
+    console.log(JSON.stringify(req.result.parameters, null, 2));
+
     const resolver = new Resolver({ lang: req.lang });
     const result = resolver.objectGuide(req.result.parameters);
 
     return {
-        speech: `speech: ${result}`,
+        speech: `${result}`,
         displayText: `${result}`,
         data: req.result.parameters,
         contextOut: [],

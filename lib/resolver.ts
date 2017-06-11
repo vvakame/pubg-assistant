@@ -63,10 +63,10 @@ export class Resolver {
         const base = this.loadObjectGuide();
         const mapData = base[this.map];
         const areaKey = Object.keys(mapData || {}).filter(areaKey => areaKey == req.area)[0];
-        if (!areaKey) {
-            return base.defaultError || "message unknown's battle ground";
+        if (!areaKey || !mapData[areaKey] || !mapData[areaKey][req.object]) {
+            return base.defaultError || "message unknown's battle ground https://github.com/vvakame/pubg-assistant";
         }
 
-        return mapData[areaKey]![req.object];
+        return mapData[areaKey][req.object];
     }
 }
