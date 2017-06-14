@@ -5,7 +5,24 @@ import * as yaml from "js-yaml";
 
 import { Client, Entity } from "./apiai/";
 
-export interface ObjectGuideData {
+const knowledgeBaseMap: { [lang: string]: KnowledgeBase; } = {};
+export function getKnowledgeBase(lang: string): KnowledgeBase {
+    let knowledgeBase = knowledgeBaseMap[lang];
+    if (knowledgeBase) {
+        return knowledgeBase;
+    }
+    knowledgeBase = new KnowledgeBase({ lang: lang });
+    knowledgeBaseMap[lang] = knowledgeBase;
+
+    return knowledgeBase;
+}
+
+export interface ObjectGuideReq {
+    area: string;
+    object: "vehicle" | "weapon";
+}
+
+export interface ObjectGuideContainer {
     defaultError: string;
     erangel: {
         [area: string]: ObjectGuide;
@@ -17,12 +34,11 @@ export interface ObjectGuide {
     weapon: string;
 }
 
-export interface ObjectGuideReq {
-    area: string;
-    object: "vehicle" | "weapon";
+export interface TipsRequest {
+    tag?: string;
 }
 
-export interface TipsData {
+export interface TipsContainer {
     defaultError: string;
     tips: Tips[];
 }
@@ -32,44 +48,40 @@ export interface Tips {
     tags?: string[];
 }
 
-export interface TipsRequest {
-    tag?: string;
-}
-
-export interface ResolverOptions {
+export interface KnowledgeBaseOptions {
     basePath?: string;
     lang?: string;
     map?: "erangel";
 }
 
-export class Resolver {
+export class KnowledgeBase {
     basePath: string;
     lang: string;
     map: "erangel";
 
     objectGuideCache: {
-        [lang: string]: ObjectGuideData;
+        [lang: string]: ObjectGuideContainer;
     } = {};
 
     tipsCache: {
-        [lang: string]: TipsData;
+        [lang: string]: TipsContainer;
     } = {};
 
-    constructor(opts: ResolverOptions = {}) {
+    constructor(opts: KnowledgeBaseOptions = {}) {
         this.basePath = opts.basePath || path.resolve(__dirname, "../resources");
         this.lang = opts.lang || "en";
         this.map = opts.map || "erangel";
 
-        this.loadObjectGuide(this.lang);
-        this.loadTips(this.lang);
+        this._loadObjectGuide(this.lang);
+        this._loadTips(this.lang);
     }
 
-    loadObjectGuide(lang = this.lang) {
+    private _loadObjectGuide(lang = this.lang) {
         if (this.objectGuideCache[lang]) {
             return this.objectGuideCache[lang];
         }
         if (lang !== "en") {
-            this.loadObjectGuide("en");
+            this._loadObjectGuide("en");
         }
         const dataFilePath = path.resolve(this.basePath, `object-guide.${lang}.yml`);
         const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
@@ -81,7 +93,7 @@ export class Resolver {
     }
 
     objectGuide(req: ObjectGuideReq): string {
-        const base = this.loadObjectGuide();
+        const base = this._loadObjectGuide();
         const mapData = base[this.map];
         const areaKey = Object.keys(mapData || {}).filter(areaKey => areaKey == req.area)[0];
         if (!areaKey || !mapData[areaKey] || !mapData[areaKey][req.object]) {
@@ -91,12 +103,12 @@ export class Resolver {
         return mapData[areaKey][req.object];
     }
 
-    loadTips(lang = this.lang) {
+    private _loadTips(lang = this.lang) {
         if (this.tipsCache[lang]) {
             return this.tipsCache[lang];
         }
         if (lang !== "en") {
-            this.loadTips("en");
+            this._loadTips("en");
         }
         const dataFilePath = path.resolve(this.basePath, `tips.${lang}.yml`);
         const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
@@ -110,7 +122,7 @@ export class Resolver {
     tips(req: TipsRequest = {}): string {
         // TODO オリジナル入力文を形態素解析して近いやつ選んだほうがいいと思う
 
-        const base = this.loadTips();
+        const base = this._loadTips();
         let tips = base.tips || [];
         if (req.tag) {
             tips = tips.filter(tip => (tip.tags || []).some(tag => tag === req.tag));
@@ -128,7 +140,7 @@ export class Resolver {
         return tip.entry;
     }
 
-    loadApiAIEntities() {
+    private _loadApiAIEntities() {
         const dataFilePath = path.resolve(this.basePath, "entities.yml");
         const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
         const data = yaml.load(content);
@@ -137,7 +149,7 @@ export class Resolver {
 
     async updateApiAIEntities() {
         const cli = new Client();
-        const entities = this.loadApiAIEntities();
+        const entities = this._loadApiAIEntities();
         const results = await Promise.all(Object.keys(entities).map(async entityName => {
             const entity: Entity = entities[entityName];
             entity.name = entityName;

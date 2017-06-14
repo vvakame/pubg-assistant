@@ -2,19 +2,7 @@ import * as http from "http";
 import * as express from "express";
 
 import { QueryResponse, WebhookResponse } from "./apiai/";
-import { ObjectGuideReq, TipsRequest, Resolver } from "./resolver";
-
-const resolverMap: { [lang: string]: Resolver; } = {};
-function getResolver(lang: string): Resolver {
-    let resolver = resolverMap[lang];
-    if (resolver) {
-        return resolver;
-    }
-    resolver = new Resolver({ lang: lang });
-    resolverMap[lang] = resolver;
-
-    return resolver;
-}
+import { ObjectGuideReq, TipsRequest, getKnowledgeBase } from "./knowledgeBase";
 
 export function apiai(req: express.Request, res: express.Response) {
     const data: QueryResponse<any> = req.body;
@@ -52,8 +40,7 @@ export function apiai(req: express.Request, res: express.Response) {
 function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse {
     console.log(JSON.stringify(req.result.parameters, null, 2));
 
-    const resolver = getResolver(req.lang);
-    const result = resolver.objectGuide(req.result.parameters);
+    const result = getKnowledgeBase(req.lang).objectGuide(req.result.parameters);
 
     return {
         speech: `${result}`,
@@ -68,8 +55,7 @@ function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse 
 function handleTips(req: QueryResponse<TipsRequest>): WebhookResponse {
     console.log(JSON.stringify(req.result.parameters, null, 2));
 
-    const resolver = getResolver(req.lang);
-    const result = resolver.tips(req.result.parameters);
+    const result = getKnowledgeBase(req.lang).tips(req.result.parameters);
 
     return {
         speech: `${result}`,

@@ -1,3 +1,3 @@
-import "./resolverSpec";
+import "./knowledgeBaseSpec";
 
 import "./apiai/indexSpec";

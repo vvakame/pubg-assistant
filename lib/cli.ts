@@ -1,7 +1,7 @@
-import { Resolver } from "./resolver";
+import { KnowledgeBase } from "./knowledgeBase";
 
-const resolver = new Resolver();
-const result = resolver.updateApiAIEntities();
+const knowledgeBase = new KnowledgeBase();
+const result = knowledgeBase.updateApiAIEntities();
 result
     .then(results => {
         results.forEach(result => {
