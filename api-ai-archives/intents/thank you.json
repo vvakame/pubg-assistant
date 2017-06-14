@@ -1,0 +1,40 @@
+{
+  "userSays": [
+    {
+      "id": "8db76e4c-c00e-467c-821e-f1665a6d4886",
+      "data": [
+        {
+          "text": "ありがとう"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "5cb79350-7925-4ca0-b95c-70219d08481c",
+  "name": "thank you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "がんばってね！"
+        }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

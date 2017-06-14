@@ -1,0 +1,62 @@
+{
+  "id": "0628c5f6-368d-4b65-9833-e9da5aa97dcd",
+  "name": "area",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "pochinki",
+      "synonyms": [
+        "Pochinki",
+        "ポチンキ"
+      ]
+    },
+    {
+      "value": "georgopol",
+      "synonyms": [
+        "Georgopol",
+        "ジョージプール",
+        "ジョージポレ"
+      ]
+    },
+    {
+      "value": "school",
+      "synonyms": [
+        "School",
+        "大学"
+      ]
+    },
+    {
+      "value": "mylta",
+      "synonyms": [
+        "Mylta",
+        "ミルタ"
+      ]
+    },
+    {
+      "value": "sosnovka_military_base",
+      "synonyms": [
+        "Sosnovka Militaly Base",
+        "Militaly Base",
+        "Base",
+        "基地",
+        "ミリタリーベース"
+      ]
+    },
+    {
+      "value": "severny",
+      "synonyms": [
+        "Severny",
+        "セバニー"
+      ]
+    },
+    {
+      "value": "gatka",
+      "synonyms": [
+        "ガトカ",
+        "Gatka"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

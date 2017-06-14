@@ -1,0 +1,377 @@
+{
+  "userSays": [
+    {
+      "id": "ba89ecab-eea5-4203-ac70-63f55e5fd28d",
+      "data": [
+        {
+          "text": "ミリタリーベース",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7e160a1b-16ec-4c23-beb8-ea01b6c3ca7b",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "は？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c36445b4-9fb8-4b9b-86b2-0148f038751e",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "の場所"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "64475b9d-f501-4c2f-b60f-f70016faaf38",
+      "data": [
+        {
+          "text": "ジョージプール",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "26346645-3522-4571-bd7c-178ab8762f0d",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "！"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1133f615-112f-4d45-82e4-17dce1bc3c3f",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "のことだよぉおおぉ"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f256b6a3-5c34-4fdd-a107-6f0e359a1f33",
+      "data": [
+        {
+          "text": "ガトカ",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "16d31ca7-bd06-41f0-9388-c34f85096b33",
+      "data": [
+        {
+          "text": "ダチア",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "ほしい"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ee73631b-6f0d-4f67-9389-f184d05f2949",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "どこ？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e6340ea8-3e57-4ce8-8471-12bb53bbd307",
+      "data": [
+        {
+          "text": "ダチア",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "はだいたい何処にある？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "18d52b89-03db-459e-9355-239a4ca63720",
+      "data": [
+        {
+          "text": "ミルタ",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "で"
+        },
+        {
+          "text": "ダチア",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": true
+        },
+        {
+          "text": "ほしい"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "8ae854af-36e4-433e-b7ef-1caeff9771d8",
+      "data": [
+        {
+          "text": "ミルタ",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "武器",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": true
+        },
+        {
+          "text": "知りたい"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "838f594b-e1e4-4b77-aa4f-6978e6f59660",
+      "data": [
+        {
+          "text": "ジョージプール",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "武器",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "どの辺がいいの？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "373534e7-44d5-4f1b-a8ad-fe0ebc2af63e",
+      "data": [
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "がめっちゃ欲しくて"
+        },
+        {
+          "text": "ミルタ",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の近くでなんかない？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ffe09a84-985f-43f4-bfef-c48ac84905cf",
+      "data": [
+        {
+          "text": "セバニー",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "武器",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "濃度高いとこどこ？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "bfc9d445-3969-44b6-b01a-4502a9837fbe",
+      "data": [
+        {
+          "text": "大学",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の周りに"
+        },
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "ってあったっけ？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5cc80070-4176-439f-be06-15a8847bf217",
+      "data": [
+        {
+          "text": "ポチンキ",
+          "alias": "area",
+          "meta": "@area",
+          "userDefined": false
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "車",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": "の場所"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "c1e6d440-cfd3-4adf-8817-63f3ba9c68ca",
+  "name": "object-guide",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@area",
+          "name": "area",
+          "value": "$area",
+          "prompts": [
+            "今どのあたりにいますか？"
+          ],
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@object",
+          "name": "object",
+          "value": "$object",
+          "prompts": [
+            "武器と車どっちの情報が欲しいですか？"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "ちょっとWebのお脳がパンクしちゃったみたい…"
+        }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

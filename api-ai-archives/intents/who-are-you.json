@@ -1,0 +1,52 @@
+{
+  "userSays": [
+    {
+      "id": "09e31b6b-d635-4f3c-9f01-d615eeefcc8a",
+      "data": [
+        {
+          "text": "あなたは誰？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3af291e5-1f43-4707-829c-84f4ca241369",
+      "data": [
+        {
+          "text": "何ができるの？"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "424bc78e-a2da-4cb7-9c7f-c3ab1728b30a",
+  "name": "who-are-you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "PUBGのプレイをお手伝いするBOTだよ！質問してみてね！",
+            "ポチンキの車ってどこだっけ？とか聞いてくれたらお答えしますよ！"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

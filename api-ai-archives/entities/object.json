@@ -1,0 +1,39 @@
+{
+  "id": "eb7c22a8-1400-4c69-aa8f-728237c60eab",
+  "name": "object",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "vehicle",
+      "synonyms": [
+        "vehicle",
+        "車",
+        "バイク",
+        "足",
+        "ダチア",
+        "UAZ",
+        "バギー"
+      ]
+    },
+    {
+      "value": "weapon",
+      "synonyms": [
+        "weapon",
+        "武器",
+        "銃",
+        "ショットガン",
+        "ピストル",
+        "拳銃",
+        "AR",
+        "アサルトライフル",
+        "SMG",
+        "サブマシンガン",
+        "SR",
+        "スナイパーライフル",
+        "フライパン"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

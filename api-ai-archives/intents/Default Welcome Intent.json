@@ -1,0 +1,97 @@
+{
+  "userSays": [
+    {
+      "id": "045f7728-7430-4e0b-b1fd-ac2a6c9d4eeb",
+      "data": [
+        {
+          "text": "こんにちは"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "8e31aa3c-5535-4574-904f-b194d1ca172b",
+      "data": [
+        {
+          "text": "こんにちは！"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dc613001-5fe1-48b5-8612-0921ca3c2e22",
+      "data": [
+        {
+          "text": "ドン勝食べるぞ"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e0532022-dac9-44d1-8573-7d6985369847",
+      "data": [
+        {
+          "text": "PUBGやるぞ"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7df61096-8f95-4f22-8694-24fb36203e27",
+      "data": [
+        {
+          "text": "PUBG手伝って"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ccd40171-68a0-4190-9004-2c7d8df08218",
+      "data": [
+        {
+          "text": "PUBGの事教えて"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "a01fe60f-0534-45ea-95a8-df118ce0f2cc",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "ドン勝食べに行きましょう！",
+            "街の事が知りたいですか？車や武器の情報を知っていますよ"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ]
+}
