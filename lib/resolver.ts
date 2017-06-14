@@ -114,6 +114,10 @@ export class Resolver {
         let tips = base.tips || [];
         if (req.tag) {
             tips = tips.filter(tip => (tip.tags || []).some(tag => tag === req.tag));
+
+            if (tips.length === 0) {
+                tips = (base.tips || []).filter(tip => tip.entry.indexOf(req.tag!) !== -1);
+            }
         }
         if (tips.length === 0) {
             return base.defaultError;

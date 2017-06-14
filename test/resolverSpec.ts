@@ -29,6 +29,11 @@ describe("Resolver class", () => {
                 const result = resolver.tips({ tag: "零点距離" });
                 assert(result.indexOf("零点距離") !== -1);
             }
+            {
+                // tagsで該当がなかった場合entryから全文検索
+                const result = resolver.tips({ tag: "。" });
+                assert(result.indexOf("。") !== -1);
+            }
         });
 
         it("response default error on unknown area", () => {
