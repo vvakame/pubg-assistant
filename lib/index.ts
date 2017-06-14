@@ -1,7 +1,7 @@
 import * as http from "http";
 import * as express from "express";
 
-import { QueryResponse, WebhookResponse } from "./apiai/apiai";
+import { QueryResponse, WebhookResponse } from "./apiai/";
 import { ObjectGuideReq, TipsRequest, Resolver } from "./resolver";
 
 export function apiai(req: express.Request, res: express.Response) {

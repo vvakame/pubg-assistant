@@ -4,29 +4,14 @@ import * as path from "path";
 import fetch from "node-fetch";
 
 import { baseUrl, apiVersion } from "./base";
-import { Status } from "./apiai";
+import { Status, Entity, EntityDescription } from "./model";
+
+export * from "./base";
+export * from "./model";
 
 export interface Options {
     baseUrl?: string;
     accessToken?: string;
-}
-
-export interface EntityDescription {
-    id: string;
-    name: string;
-    count: number;
-    preview: string;
-}
-
-export interface Entity {
-    id: string;
-    name: string;
-    entries: {
-        value: string;
-        synonyms: string[];
-    }[];
-    isEnum: boolean;
-    automatedExpansion: boolean;
 }
 
 export class Client {

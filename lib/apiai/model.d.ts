@@ -91,3 +91,21 @@ export interface WebhookResponse {
     source: string;
     followupEvent: any;
 }
+
+export interface EntityDescription {
+    id: string;
+    name: string;
+    count: number;
+    preview: string;
+}
+
+export interface Entity {
+    id: string;
+    name: string;
+    entries: {
+        value: string;
+        synonyms: string[];
+    }[];
+    isEnum: boolean;
+    automatedExpansion: boolean;
+}
