@@ -2,7 +2,7 @@ import * as http from "http";
 import * as express from "express";
 
 import { QueryResponse, WebhookResponse } from "./apiai/apiai";
-import { ObjectGuideReq, Resolver } from "./resolver";
+import { ObjectGuideReq, TipsRequest, Resolver } from "./resolver";
 
 export function apiai(req: express.Request, res: express.Response) {
     const data: QueryResponse<any> = req.body;
@@ -11,6 +11,14 @@ export function apiai(req: express.Request, res: express.Response) {
     }
     if (data.result.metadata.intentName === "object-guide") {
         let result = handleObjectGuide(data);
+        result = modifyResult(data, result) || result;
+
+        console.log(data.result.metadata.intentName, JSON.stringify(result, null, 2));
+
+        res.status(200).json(result);
+        return;
+    } else if (data.result.metadata.intentName === "tips") {
+        let result = handleTips(data);
         result = modifyResult(data, result) || result;
 
         console.log(data.result.metadata.intentName, JSON.stringify(result, null, 2));
@@ -34,6 +42,22 @@ function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse 
 
     const resolver = new Resolver({ lang: req.lang });
     const result = resolver.objectGuide(req.result.parameters);
+
+    return {
+        speech: `${result}`,
+        displayText: `${result}`,
+        data: req.result.parameters,
+        contextOut: [],
+        source: "PUBG Cloud Functions",
+        followupEvent: null,
+    };
+}
+
+function handleTips(req: QueryResponse<TipsRequest>): WebhookResponse {
+    console.log(JSON.stringify(req.result.parameters, null, 2));
+
+    const resolver = new Resolver({ lang: req.lang });
+    const result = resolver.tips(req.result.parameters);
 
     return {
         speech: `${result}`,
