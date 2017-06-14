@@ -83,7 +83,7 @@ export class KnowledgeBase {
         if (lang !== "en") {
             this._loadObjectGuide("en");
         }
-        const dataFilePath = path.resolve(this.basePath, `object-guide.${lang}.yml`);
+        const dataFilePath = path.resolve(this.basePath, `knowledge/object-guide.${lang}.yml`);
         const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
         const data = yaml.load(content);
         // TODO use deepAssign like function
@@ -110,7 +110,7 @@ export class KnowledgeBase {
         if (lang !== "en") {
             this._loadTips("en");
         }
-        const dataFilePath = path.resolve(this.basePath, `tips.${lang}.yml`);
+        const dataFilePath = path.resolve(this.basePath, `knowledge/tips.${lang}.yml`);
         const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
         const data = yaml.load(content);
         // TODO use deepAssign like function
@@ -140,22 +140,18 @@ export class KnowledgeBase {
         return tip.entry;
     }
 
-    private _loadApiAIEntities() {
-        const dataFilePath = path.resolve(this.basePath, "entities.yml");
-        const content = fs.readFileSync(dataFilePath, { encoding: "utf8" });
-        const data = yaml.load(content);
-        return data;
+    private _loadApiAIEntities(): Entity[] {
+        const dataDirPath = path.resolve(this.basePath, "api-ai");
+        const files = fs.readdirSync(dataDirPath);
+        return files.map(file => {
+            const content = fs.readFileSync(path.resolve(dataDirPath, file), { encoding: "utf8" });
+            return yaml.load(content);
+        });
     }
 
     async updateApiAIEntities() {
         const cli = new Client();
         const entities = this._loadApiAIEntities();
-        const results = await Promise.all(Object.keys(entities).map(async entityName => {
-            const entity: Entity = entities[entityName];
-            entity.name = entityName;
-            return await cli.putEntity(entity);
-        }));
-
-        return results;
+        return await Promise.all(entities.map(entity => cli.putEntity(entity)));
     }
 }

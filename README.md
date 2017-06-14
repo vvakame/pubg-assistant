@@ -18,13 +18,13 @@ Try [Web Demo](https://bot.api.ai/1e1b6371-3e1e-42ee-bbfe-23de753c916e)
 
 会話の強化方法はざっくりと2種類です。
 
-1. api.aiが判別できる語彙を増やす [ここを編集するとmerge後自動的に反映](https://github.com/vvakame/pubg-assistant/blob/master/resources/entities.yml)
-2. 応答サーバが判定できる情報を増やす [ここを編集するとmerge後自動的に反映](https://github.com/vvakame/pubg-assistant/blob/master/resources/object-guide.ja.yml)
+1. api.aiが判別できる語彙を増やす [ここを編集するとmerge後自動的に反映](https://github.com/vvakame/pubg-assistant/blob/master/resources/api-ai/entities.yml)
+2. 応答サーバが判定できる情報を増やす [ここを編集するとmerge後自動的に反映](https://github.com/vvakame/pubg-assistant/blob/master/resources/knowledge/object-guide.ja.yml)
 
 ### 語彙を増やす？
 
-1. Sosnovka Military Base は基地とかミリタリーベースとか色々な言い方があるので言い換え（synonym）を増やす [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/entities.yml)
-2. そもそも、ほしい地名がなかった！その場合もデータを増やせばOK！ [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/entities.yml)
+1. Sosnovka Military Base は基地とかミリタリーベースとか色々な言い方があるので言い換え（synonym）を増やす [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/api-ai/entities.yml)
+2. そもそも、ほしい地名がなかった！その場合もデータを増やせばOK！ [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/api-ai/entities.yml)
 
 ### 語彙を増やしたけど期待した応答にならない
 
@@ -33,8 +33,8 @@ api.ai上でIntentのUser sayに追加するとうまくいく場合が多くあ
 
 ### アドバイスの内容を登録したり改良したりしたい
 
-1. 基本的にはデータを編集するだけでOK [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/object-guide.ja.yml)
-2. 地名のデータがapi.ai側に存在しない場合そもそも応答サーバにデータが来ないので [こっちもチェック](https://github.com/vvakame/pubg-assistant/blob/master/resources/entities.yml)
+1. 基本的にはデータを編集するだけでOK [ここから](https://github.com/vvakame/pubg-assistant/blob/master/resources/knowledge/object-guide.ja.yml)
+2. 地名のデータがapi.ai側に存在しない場合そもそも応答サーバにデータが来ないので [こっちもチェック](https://github.com/vvakame/pubg-assistant/blob/master/resources/api-ai/entities.yml)
 
 ## TODO
 

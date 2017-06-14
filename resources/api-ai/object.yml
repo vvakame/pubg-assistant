@@ -1,0 +1,31 @@
+name: object
+isOverridable: true
+entries:
+  - value: vehicle
+    synonyms:
+      - vehicle
+      - 車
+      - バイク
+      - 足
+      - ダチア
+      - UAZ
+      - バギー
+      - 乗り物
+  - value: weapon
+    synonyms:
+      - weapon
+      - 武器
+      - 銃
+      - ピストル
+      - 拳銃
+      - SG
+      - ショットガン
+      - AR
+      - アサルトライフル
+      - SMG
+      - サブマシンガン
+      - SR
+      - スナイパーライフル
+      - フライパン
+isEnum: false
+automatedExpansion: false

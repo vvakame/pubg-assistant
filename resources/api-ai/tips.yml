@@ -1,0 +1,11 @@
+name: tips
+isOverridable: true
+entries:
+  - value: today
+    synonyms:
+      - 今日のTips
+  - value: weapon
+    synonyms:
+      - 武器のTips
+isEnum: false
+automatedExpansion: false
