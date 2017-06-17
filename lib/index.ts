@@ -55,8 +55,12 @@ function handleObjectGuide(req: QueryResponse<ObjectGuideReq>): WebhookResponse 
 function handleTips(req: QueryResponse<TipsRequest>): WebhookResponse {
     console.log(JSON.stringify(req, null, 2));
     console.log(JSON.stringify(req.result.parameters, null, 2));
+    const params: TipsRequest = {
+        originalQuery: req.result.resolvedQuery,
+        ...req.result.parameters,
+    };
 
-    const result = getKnowledgeBase(req.lang).tips(req.result.parameters);
+    const result = getKnowledgeBase(req.lang).tips(params);
 
     return {
         speech: `${result}`,

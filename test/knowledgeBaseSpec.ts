@@ -22,11 +22,11 @@ describe("KnowledgeBase class", () => {
             const knowledgeBase = new KnowledgeBase({ lang: "ja" });
 
             {
-                const result = knowledgeBase.tips();
-                assert(result !== "良さそうなTipsがありませんでした… https://github.com/vvakame/pubg-assistant");
+                const result = knowledgeBase.tips({ tag: "零点距離" });
+                assert(result.indexOf("零点距離") !== -1);
             }
             {
-                const result = knowledgeBase.tips({ tag: "零点距離" });
+                const result = knowledgeBase.tips({ originalQuery: "零点距離って何？" });
                 assert(result.indexOf("零点距離") !== -1);
             }
             {

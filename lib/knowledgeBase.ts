@@ -36,6 +36,7 @@ export interface ObjectGuide {
 
 export interface TipsRequest {
     tag?: string;
+    originalQuery?: string;
 }
 
 export interface TipsContainer {
@@ -123,21 +124,35 @@ export class KnowledgeBase {
         // TODO オリジナル入力文を形態素解析して近いやつ選んだほうがいいと思う
 
         const base = this._loadTips();
-        let tips = base.tips || [];
         if (req.tag) {
+            let tips = base.tips || [];
             tips = tips.filter(tip => (tip.tags || []).some(tag => tag === req.tag));
 
             if (tips.length === 0) {
                 tips = (base.tips || []).filter(tip => tip.entry.indexOf(req.tag!) !== -1);
             }
-        }
-        if (tips.length === 0) {
-            return base.defaultError;
+
+            const tip = this._randomPickup(tips);
+            if (tip) {
+                return tip.entry;
+            }
         }
 
-        let index = Math.floor(Math.random() * tips.length);
-        const tip = tips[index] || tips[0];
-        return tip.entry;
+        if (req.originalQuery) {
+            let tips = base.tips || [];
+            tips = tips.filter(tip => (tip.tags || []).some(tag => req.originalQuery!.indexOf(tag) !== -1));
+            const tip = this._randomPickup(tips);
+            if (tip) {
+                return tip.entry;
+            }
+        }
+
+        return base.defaultError;
+    }
+
+    private _randomPickup<T>(array: T[]): T | undefined {
+        let index = Math.floor(Math.random() * array.length);
+        return array[index] || array[0];
     }
 
     private _loadApiAIEntities(): Entity[] {
