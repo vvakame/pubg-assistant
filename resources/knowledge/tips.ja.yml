@@ -2,9 +2,10 @@ defaultError: 良さそうなTipsがありませんでした… https://github.c
 
 tips:
   # Newbieにすぐに約立つ知識
-  - entry: マップ上の最小の網目は100m角です
+  - entry: マップ上の最小のマス目は100m角です
     tags:
       - map
+      - マス目
   - entry: 飛行機から最速で地上に到達するために垂直落下しましょう。時速234kmが最高値です。落下傘は自動的に開くに任せます
     tags:
       - early part
@@ -26,6 +27,7 @@ tips:
   - entry: ドアを銃撃するとドアを部分的に壊すことができます
     tags:
       - weapon
+      - ドア
   - entry: 乗り物で移動中に銃撃したい場合、停車して降りるより助手席にCtrl+2などで移動して撃ったほうが早いです
     tags:
       - vehicle
