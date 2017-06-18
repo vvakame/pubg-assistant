@@ -18,6 +18,7 @@ erangel:
   novonconove:
   # Pocninki:
   pochinki:
+    vehicle: ガレージが道路に面した南側街の中央あたりにありますよ そこから道路北側すこし東にも湧く可能性があります
   primorsk:
   rozhok:
     vehicle: ガレージが道路の南側右側にありますよ 西側Water Townの北東150mにもありますね
@@ -26,7 +27,9 @@ erangel:
   # Major Landmarks
   mylta_power:
   sosnovka_island:
+    vehicle: 道路沿いに点在してます 島の東側 Novorepnoyeの町にガレージが2つありますよ
   sosnovka_military_base:
+    vehicle: 道路沿いに点在してます 島の東側 Novorepnoyeの町にガレージが2つありますよ
   stalber:
   # Others
   school:
