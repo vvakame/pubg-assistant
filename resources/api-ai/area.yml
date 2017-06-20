@@ -10,6 +10,13 @@ entries:
       - Georgopol
       - ジョージプール
       - ジョージポレ
+  - value: yasnaya_polyana
+    synonyms:
+      - Yasnaya Polyana
+      - Yasnaya
+      - Polyana
+      - ヤスナヤ
+      - ポリアーナ
   - value: school
     synonyms:
       - School
